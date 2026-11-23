@@ -1,0 +1,48 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ArticleList from '../components/ArticleList.astro';
+import Calculator from '../components/Calculator.astro';
+import { Image } from 'astro:assets';
+import { scene } from '../lib/scene.mjs';
+import { sitePath } from '../lib/paths.mjs';
+import { articles } from '../lib/content.mjs';
+import { booking, municipalGuide, office, reservation, site } from '../lib/site.mjs';
+const directions = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('Av. Txorierri, 46, 48150 Basozabal, Bizkaia');
+---
+<SiteLayout path="/" title={site.title} description={site.description}>
+  <section class="hero business-hero">
+    <div class="wrap workbench">
+      <div class="business-intro">
+        <div class="intro-copy">
+          <h1>Furgonetas de alquiler para empresas en Bilbao</h1>
+          <p>Calcula el coste de tu ruta como empresa o autónomo, con recogida en Sondika.</p>
+          <div class="actions"><a class="button" href={booking}>Ir a la web de reservas</a><a class="secondary" href="#calculadora">Calcular coste</a></div>
+        </div>
+        <figure class="route-photo"><Image src={scene.image} widths={[480, 760, 1040]} sizes="(max-width: 48rem) 92vw, (max-width: 80rem) 43vw, 520px" alt={scene.alt} loading="eager" fetchpriority="high" /></figure>
+      </div>
+      <Calculator />
+    </div>
+  </section>
+  <section class="block wrap work-plans">
+    <div class="section-intro"><h2>Prepara tu jornada en Bizkaia</h2><p>Antes de pedir presupuesto, concreta el trabajo que hará la furgoneta.</p></div>
+    <div class="job-row"><h3>Reparto urbano</h3><p>Suma la ida desde Sondika, todas las entregas y la devolución. Revisa los horarios de carga en cada parada.</p><a href={municipalGuide}>Carga y descarga en Bilbao</a></div>
+    <div class="job-row"><h3>Obra o sustitución</h3><p>Anota qué herramientas llevarás y quién recogerá la furgoneta. Pide la documentación y las condiciones para añadir conductores.</p><a href={sitePath('/blog/' + articles[2].slug + '/')}>Preparar el alquiler temporal</a></div>
+    <div class="job-row"><h3>Alquiler recurrente</h3><p>Compara una jornada con la semana completa. Revisa el kilometraje, los extras, las prórrogas y los datos de facturación.</p><a href={sitePath('/blog/' + articles[0].slug + '/')}>Comparar presupuestos</a></div>
+  </section>
+  <section id="oficina" class="office-band" aria-labelledby="office-title"><div class="wrap office-grid">
+    <div><h2 id="office-title">La oficina para Bilbao está en Sondika</h2>
+      <p>Incluye en el kilometraje el trayecto a tu primera parada y el regreso desde la última. Para más de 30 días, solicita presupuesto a la oficina.</p>
+      <div class="actions"><a class="button" href={reservation}>Ver fechas en la web de la oficina</a></div>
+    </div>
+    <div class="office-details">
+      <address>{office.address}</address>
+      <p>Lunes a viernes, de 08:00 a 13:00 y de 16:00 a 19:00.</p>
+      <a class="office-phone" href={'tel:' + office.phone}>{office.displayPhone}</a>
+      <div class="office-links"><a href={directions}>Cómo llegar en Google Maps</a><a href={office.maps}>Ficha de la oficina</a></div>
+    </div>
+  </div></section>
+  <section class="block wrap guide-section">
+    <div class="section-intro"><h2>{site.blogTitle}</h2><a href={sitePath('/blog/')}>Todas las guías</a></div>
+    <ArticleList list={articles} />
+  </section>
+</SiteLayout>
