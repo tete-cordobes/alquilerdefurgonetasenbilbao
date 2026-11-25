@@ -15,7 +15,11 @@ export const articles = [
         heading: 'Calcula el coste por encima del límite incluido',
         paragraphs: [
           'Supón que una oferta incluye 300 km para toda la reserva y que tu recorrido estimado es de 420 km. Debes añadir 120 km de exceso al precio unitario del presupuesto. El resultado cambia si el límite se aplica por día y no se puede repartir entre jornadas. Confirma el periodo y las reglas exactas antes de usar el cálculo.',
-          'Añade combustible o recarga, peajes previstos y extras confirmados. Incluye una segunda estimación con más kilómetros si la ruta puede cambiar. Compara el coste total para cada escenario y comprueba qué ocurre si necesitas ampliar los días.'
+          [
+            'Introduce el recorrido previsto y el precio por kilómetro extra en la ',
+            { text: 'calculadora de coste del alquiler', href: '/#calculadora' },
+            '. Suma los extras confirmados y cuenta también el combustible o la recarga y los peajes previstos. Incluye una segunda estimación con más kilómetros si la ruta puede cambiar. Compara el coste total para cada escenario y comprueba qué ocurre si necesitas ampliar los días.'
+          ]
         ]
       },
       {
@@ -62,7 +66,11 @@ export const articles = [
       {
         heading: 'Registra los datos de la primera jornada',
         paragraphs: [
-          'Apunta kilómetros reales, tiempo en cada parada y dificultades de acceso. Añade el tiempo de recogida y de devolución en Sondika si la ruta parte desde allí. Para el siguiente alquiler, usa los datos de la jornada para ajustar el vehículo, el kilometraje contratado y el orden de las entregas.'
+          [
+            'Apunta kilómetros reales, tiempo en cada parada y dificultades de acceso. Si la ruta parte de Sondika, consulta la ',
+            { text: 'dirección y el horario de la oficina', href: '/#oficina' },
+            ' para incluir la recogida y la devolución en la jornada. Para el siguiente alquiler, usa los datos de la jornada para ajustar el vehículo, el kilometraje contratado y el orden de las entregas.'
+          ]
         ]
       }
     ]
@@ -90,7 +98,11 @@ export const articles = [
         heading: 'Prepara los datos de facturación y de pago',
         paragraphs: [
           'Facilita los datos fiscales que deban figurar en la factura antes de formalizar el alquiler. Si tu empresa requiere número de pedido, referencia de obra o aprobación de gastos, confirma con la oficina cómo incorporarlos. Comprueba cuándo se emite la factura y cómo se documentarán extras, prórrogas o kilómetros de exceso.',
-          'Asegúrate de que la persona que recoge el vehículo dispone de un medio de pago aceptado para los importes pactados y, en su caso, la fianza. Guarda el presupuesto, el contrato y los justificantes en el mismo expediente.'
+          [
+            'Asegúrate de que la persona que recoge el vehículo dispone de un medio de pago aceptado para los importes pactados y, en su caso, la fianza. Si tienes varias ofertas, revisa ',
+            { text: 'cómo comparar precio, kilometraje y fianza', href: '/blog/kilometraje-fianza-coste-furgoneta-empresa-bilbao/' },
+            ' antes de elegir. Guarda el presupuesto, el contrato y los justificantes en el mismo expediente.'
+          ]
         ]
       },
       {
